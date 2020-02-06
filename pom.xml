@@ -203,10 +203,9 @@
         <version>1.8.5</version>
         <scope>test</scope>
       </dependency>
-    </dependencies>
-  </dependencyManagement>
 
-         <plugin>
+<dependency>
+
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.7.5.201505241946</version>
@@ -253,6 +252,8 @@
         </plugins>
     </build>
 </project>
+    </dependencies>
+  </dependencyManagement>
   <scm>
     <connection>scm:git:git@github.com:prakashk0301/maven-project.git</connection>
     <developerConnection>scm:git:git@github.com:prakashk0301/maven-project.git</developerConnection>
