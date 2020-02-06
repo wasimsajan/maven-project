@@ -14,7 +14,7 @@
   <properties>
     <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
-    <sonar.sources>src/main/java/com/example</sonar.sources>
+    <sonar.sources>src/main/webapp/</sonar.sources>
     <sonar.tests>src/test/java/com/example/</sonar.tests>
     <!-- Below property indicates the pattern of the test suite -->
     <runSuite>**/*Suite.class</runSuite>
