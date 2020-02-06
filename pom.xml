@@ -15,7 +15,7 @@
     <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
     <sonar.sources>src/main</sonar.sources>
-    <sonar.tests>src/main/webapp/WEB-INF/web.xml/</sonar.tests>
+    <sonar.tests>server/src/test/java/com/example/</sonar.tests>
     <!-- Below property indicates the pattern of the test suite -->
     <runSuite>**/*Suite.class</runSuite>
     <!-- Sonar-JaCoCo properties -->
