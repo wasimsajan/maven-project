@@ -1,40 +1,31 @@
 pipeline {
     agent any
-
-
-    stages 
-    {  
-        
-        stage ('SCM Checkout') {
-          git 'https://github.com/prakashk0301/maven-project'
+    stages {  
+        stage ('SCM Checkout-clone-my-code') {
+            steps {
+               git branch: 'ci-cd-pipeline', url: "https://github.com/prakashk0301/maven-project"
          }
+        }
     
-    }
-    {
         stage ('Compile Stage') {
-
             steps {
                 withMaven(maven : 'LocalMaven') 
                 {   
                     sh 'mvn compile' 
                 }
-                }
-                  }
+               }
+              }
                                 
             
         
-        
-        stage ('Testing Stage') {
-
-
+         stage ('Testing Stage') {
             steps {
                 withMaven(maven : 'LocalMaven')
                 {
                     sh 'mvn test'
                 }
-                  }
-                                 
-        }
+               }            
+              }
 
         
         stage ('install Stage') {
@@ -42,10 +33,9 @@ pipeline {
                 withMaven(maven : 'LocalMaven')
                 {
                     sh 'mvn install'
-                }
-                                  
-                   }
-        }
+                }                                 
+              }
+            }
 
     }      
 }
