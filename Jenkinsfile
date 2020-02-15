@@ -4,9 +4,9 @@ pipeline {
 
     stages {
         stage('SCM Checkout'){
-          git 'https://github.com/prakashk0301/maven-project.git'
+          git 'https://github.com/prakashk0301/maven-project'
         }
-    }
+  }
     {
         stage ('Compile Stage') {
 
@@ -35,14 +35,12 @@ pipeline {
             }
         }
 
-        stage ('build && SonarQube analysis') {
-            steps {
-		withSonarQubeEnv('sonar') {
-                    withMaven(maven : 'LocalMaven') {
-                        sh 'mvn clean package sonar:sonar'
-                    }
-		}	
-            }
-        }
+        stage ('deploy to tomcat') {
+             steps {
+                 sshagent(['f39cd834-5e32-428e-965f-d6020b95c133']) {
+                 sh 'scp -o StrictHostKeyChecking=no */target/*.war ec2-user@172.31.38.135:/var/lib/tomcat/webapps/'
+      } 
 }
+}
+    }
 }
