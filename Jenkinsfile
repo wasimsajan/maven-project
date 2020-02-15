@@ -3,7 +3,7 @@ pipeline {
 
 
     stages {
-        stage('SCM Checkout'){
+        { stage('SCM Checkout'){
           git 'https://github.com/prakashk0301/maven-project'
         }
   }
@@ -43,4 +43,5 @@ pipeline {
 }
 }
     }
+}
 }
