@@ -16,7 +16,8 @@ pipeline {
                 }
             }
         }
-
+    }
+        {
         stage ('Testing Stage') {
 
             steps {
@@ -25,8 +26,9 @@ pipeline {
                 }
             }
         }
+        }
 
-
+        {
         stage ('install Stage') {
             steps {
                 withMaven(maven : 'LocalMaven') {
@@ -34,7 +36,8 @@ pipeline {
                 }
             }
         }
-
+        }
+        {
         stage ('deploy to tomcat') {
              steps {
                  sshagent(['f39cd834-5e32-428e-965f-d6020b95c133']) {
