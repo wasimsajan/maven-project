@@ -1,6 +1,20 @@
-# maven-project
-Source code for James Lee's Jenkins course.
+#example of conditions using when 
 
-Check out our Latest DevOps PDF book.
-
-https://www.level-up.one/devops-pdf-book
+pipeline {
+    agent any
+    stages {
+        stage('Example Build') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Example Deploy') {
+            when {
+                branch 'production'
+            }
+            steps {
+                echo 'Deploying'
+            }
+        }
+    }
+}
