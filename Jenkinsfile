@@ -12,7 +12,7 @@ pipeline {
                 branch "master"
             } 
             steps {
-                withMaven(maven : 'LocalMVN') 
+                withMaven(maven : 'localmaven') 
                 {   
                     sh 'mvn compile' 
                 }            
@@ -21,10 +21,10 @@ pipeline {
   }
     { stage ('package') {
         when {
-                branch "master"
+                branch "when-condition-ci-cd"
             } 
         steps {
-                withMaven(maven : 'LocalMVN') 
+                withMaven(maven : 'localmaven') 
                 {   
                     sh 'echo hello' 
                 }            
