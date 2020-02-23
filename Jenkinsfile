@@ -3,17 +3,17 @@ pipeline {
 
 
     stages {
-        stage('parallel'){
+        stage('parallel stage'){
             parallel {
-        stage('SCM Checkout'){
-          git 'https://github.com/prakashk0301/maven-project'
+              stage('SCM Checkout'){
+                git 'https://github.com/prakashk0301/maven-project'
         }
   }
     {
-        stage ('Compile Stage') {
+              stage ('Compile Stage') {
 
             steps {
-                withMaven(maven : 'LocalMaven') {
+                withMaven(maven : 'localmaven') {
                                sh 'mvn package'
                 }
             }
