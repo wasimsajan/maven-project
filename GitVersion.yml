@@ -1,0 +1,6 @@
+mode: ContinousDeployment
+major-version-bump-message: 'BREAKING CHANGES?:'
+minor-version-bump-message: '^feat\(?.*\)?:'
+patch-version-bump-message: '^fix\(?.*\)?:'
+commit-message-incrementing: Enabled
+branches: {}
