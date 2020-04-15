@@ -137,7 +137,7 @@
     <configuration>
         <dateFormat>yyyyMMdd-HHmmss</dateFormat><!--  human-readable part of the version number -->
         <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
-        <generateGitPropertiesFile>false</generateGitPropertiesFile><!-- somehow necessary. otherwise the variables are not available in the pom -->
+        <generateGitPropertiesFile>true</generateGitPropertiesFile><!-- somehow necessary. otherwise the variables are not available in the pom -->
     </configuration>
 </plugin>
 
