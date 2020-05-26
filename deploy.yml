@@ -1,8 +1,5 @@
 
 ---
-
----
-
 - hosts: amazonweb
   become_user: root
   become: true
