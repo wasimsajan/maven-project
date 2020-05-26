@@ -1,0 +1,23 @@
+---
+- hosts: amazonweb
+  become: true
+  become_user: root
+  tasks:
+    - name: 'Install Jdk'
+      yum:
+        name: java-1.8.0-openjdk
+        state: latest
+
+    - name: 'downloadll Tomcat'
+      get_url:
+        url: https://downloads.apache.org/tomcat/tomcat-8/v8.5.55/bin/apache-tomcat-8.5.55.tar.gz
+        dest: /opt
+
+    - name: 'Untar Tomcat'
+      unarchive:
+        src: /opt/apache-tomcat-8.5.55.tar.gz
+        dest: /opt
+        remote_src: yes
+    
+    - name: 'Start Tomcat'
+      command: nohup /opt/apache-tomcat-8.5.55/bin/startup.sh
