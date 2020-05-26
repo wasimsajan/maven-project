@@ -1,0 +1,7 @@
+---
+- host: amazonweb
+  tasks:
+    - name: 'Please deploy to tomcat'
+      copy: 
+        src: webapp/target/*.war
+        dest: etc/ansible/playbooks
