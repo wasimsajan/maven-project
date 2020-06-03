@@ -16,4 +16,10 @@ node
         {
            sh label: '', script: 'mvn clean package '
         }
+
+        stage ('docker image build') 
+        {
+           sh 'docker build -t wasimsajan/test-app:1.0.0 .'
+	    }
+
  }
