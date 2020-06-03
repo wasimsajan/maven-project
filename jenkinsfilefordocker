@@ -27,7 +27,7 @@ node
         withCredentials([string(credentialsId: 'dockerhubaccount', variable: 'dockerhubaccount')]) {
            sh "docker login -u wasimsajan -p ${dockerhubaccount}"
      }
-           sh 'docker push pkw0301/prakash-app:1.0.0'
+           sh 'docker push wasimsajan/test-app:1.0.0'
 	
      }
 
