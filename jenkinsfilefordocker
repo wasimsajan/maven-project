@@ -1,16 +1,19 @@
-node{
-    stage ('scm checkout') {
+node
+{
+    
+    stage ('scm checkout') 
+    {
 	git ('https://github.com/prakashk0301/maven-project')
 	}
-	stage ('Checkout to different branch') {
+
+	stage ('Checkout to different branch') 
+     {
            sh "git branch -r"
            sh "git checkout master"
-    }
-        stage ('package stage') {
+     }
+
+    stage ('package stage') 
+        {
            sh label: '', script: 'mvn clean package '
-        }
-	
-	stage ('docker build') {
-           sh docker build wasimsajan/wasim-app:1.0.0
         }
  }
