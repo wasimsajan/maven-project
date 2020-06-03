@@ -9,4 +9,8 @@ node{
         stage ('package stage') {
            sh label: '', script: 'mvn clean package '
         }
+	
+	stage ('docker build') {
+           sh docker build wasimsajan/wasim-app:1.0.0
+        }
  }
