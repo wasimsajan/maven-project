@@ -1,6 +1,5 @@
 Hi, Project is created by WASIM
 
-Welcome to the world of devops
+This project is for Pipeline Job
 
-Ci cd -4.0
   
